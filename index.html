@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HomeFind — Real Estate Listings</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="https://images.unsplash.com/photo-1598928506313-3a5d1c004b52?q=80&w=400&auto=format&fit=crop" alt="HomeFind logo" class="logo" 
+        />
+        <span class="brand-name">HomeFind</span>
+      </div>
+
+      <nav class="main-nav" aria-label="primary">
+        <ul>
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#agents">Agents</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn primary" href="#contact">Contact Agent</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Find your next home</h1>
+          <p class="lead">Browse verified listings — houses, apartments, and commercial spaces near you.</p>
+          <a class="btn cta" href="#listings">Explore Listings</a>
+        </div>
+
+        <div class="hero-image" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1560184897-6a3f6032ee3a?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Modern house exterior" />
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTERS + GRID -->
+    <section id="listings" class="listings container">
+      <aside class="filters" aria-label="Listing filters">
+        <h2>Filters</h2>
+
+        <form class="filters-form" aria-label="Property filters">
+          <label>
+            Property type
+            <select>
+              <option>Any</option>
+              <option>Apartment</option>
+              <option>House</option>
+              <option>Villa</option>
+            </select>
+          </label>
+
+          <label>
+            Min beds
+            <select>
+              <option>Any</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3+</option>
+            </select>
+          </label>
+
+          <label>
+            Max price
+            <select>
+              <option>Any</option>
+              <option>₹5 Lakh</option>
+              <option>₹20 Lakh</option>
+              <option>₹50 Lakh</option>
+            </select>
+          </label>
+
+          <fieldset>
+            <legend>Extras</legend>
+            <label><input type="checkbox" /> Pool</label>
+            <label><input type="checkbox" /> Parking</label>
+            <label><input type="checkbox" /> Furnished</label>
+          </fieldset>
+
+          <button class="btn secondary" type="button">Apply (visual)</button>
+        </form>
+      </aside>
+
+      <section class="grid-and-sort">
+        <div class="listings-header">
+          <h2>Featured Properties</h2>
+          <div class="sort">
+            <label>
+              Sort by
+              <select>
+                <option>Recommended</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <!-- Grid -->
+        <ul class="property-grid" role="list">
+          <!-- Card 1 -->
+          <li class="property-card" role="article" aria-label="3 bedroom house in Bangalore">
+            <figure class="card-media">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Living room with large windows"/>
+              <figcaption class="price">₹ 45,00,000 • 3 BHK</figcaption>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Cozy family home in Whitefield</h3>
+              <p class="card-sub">Bangalore • 2 bathrooms • 1500 sqft</p>
+              <div class="card-meta">
+                <div>Listed: 5 days ago</div>
+                <div class="rating" aria-hidden="true">★ 4.6</div>
+              </div>
+              <div class="card-actions">
+                <a class="btn ghost" href="#contact">Contact</a>
+                <a class="btn link" href="#">View</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Card 2 -->
+          <li class="property-card" role="article" aria-label="2 bedroom apartment in Pune">
+            <figure class="card-media">
+              <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Modern kitchen"/>
+              <figcaption class="price">₹ 38,00,000 • 2 BHK</figcaption>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">City-view apartment near Koregaon</h3>
+              <p class="card-sub">Pune • 2 bathrooms • 1100 sqft</p>
+              <div class="card-meta">
+                <div>Listed: 12 days ago</div>
+                <div class="rating" aria-hidden="true">★ 4.4</div>
+              </div>
+              <div class="card-actions">
+                <a class="btn ghost" href="#contact">Contact</a>
+                <a class="btn link" href="#">View</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Card 3 -->
+          <li class="property-card" role="article" aria-label="Villa with pool in Goa">
+            <figure class="card-media">
+              <img src="https://images.unsplash.com/photo-1505691723518-36a1b8d9a3ff?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Villa with pool"/>
+              <figcaption class="price">₹ 1,20,00,000 • 4 BHK</figcaption>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Beachside villa with private pool</h3>
+              <p class="card-sub">Goa • 4 bathrooms • 3500 sqft</p>
+              <div class="card-meta">
+                <div>Listed: 2 days ago</div>
+                <div class="rating" aria-hidden="true">★ 4.9</div>
+              </div>
+              <div class="card-actions">
+                <a class="btn ghost" href="#contact">Contact</a>
+                <a class="btn link" href="#">View</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Card 4 -->
+          <li class="property-card" role="article" aria-label="Studio apartment in Delhi">
+            <figure class="card-media">
+              <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=1200&auto=format&fit=crop&crop=entropy" alt="Compact studio interior"/>
+              <figcaption class="price">₹ 18,00,000 • Studio</figcaption>
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Compact studio in central Delhi</h3>
+              <p class="card-sub">Delhi • 1 bathroom • 450 sqft</p>
+              <div class="card-meta">
+                <div>Listed: 7 days ago</div>
+                <div class="rating" aria-hidden="true">★ 4.2</div>
+              </div>
+              <div class="card-actions">
+                <a class="btn ghost" href="#contact">Contact</a>
+                <a class="btn link" href="#">View</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <!-- Agents -->
+    <section id="agents" class="container agents">
+      <h2>Agents</h2>
+      <div class="agent-list">
+        <article class="agent-card">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop&crop=entropy" alt="Agent photo"/>
+          <div>
+            <h3>Ria Sharma</h3>
+            <p>Top-rated agent — 200+ deals</p>
+            <a href="#contact" class="btn link">Contact</a>
+          </div>
+        </article>
+
+        <article class="agent-card">
+          <img src="https://images.unsplash.com/photo-1545996124-6d3b9a8f63ff?q=80&w=600&auto=format&fit=crop&crop=entropy" alt="Agent photo"/>
+          <div>
+            <h3>Vikram Patel</h3>
+            <p>Commercial properties specialist</p>
+            <a href="#contact" class="btn link">Contact</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact / Form -->
+    <section id="contact" class="container contact">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <h2>Contact an agent</h2>
+          <p>Fill the form and the nearest agent will contact you.</p>
+          <ul class="contact-list">
+            <li>📞 +91 98765 43210</li>
+            <li>✉️ hello@homefind.example</li>
+            <li>🏢 123, Main Street, City</li>
+          </ul>
+        </div>
+
+        <form class="contact-form" aria-label="Contact form">
+          <label for="name">Full name <span aria-hidden="true">*</span>
+            <input id="name" name="name" type="text" placeholder="Your name" required/>
+          </label>
+
+          <label for="email">Email <span aria-hidden="true">*</span>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required/>
+          </label>
+
+          <label for="message">Message
+            <textarea id="message" name="message" rows="4" placeholder="Tell us what you're looking for"></textarea>
+          </label>
+
+          <label class="small">
+            <input type="checkbox" /> I agree to be contacted about listings.
+          </label>
+
+          <button class="btn primary" type="submit">Send inquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>&copy; <span id="year"></span> HomeFind • All rights reserved</p>
+      </div>
+      <div class="footer-right">
+        <nav aria-label="footer">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Help</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // small script just for year (safe; optional)
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

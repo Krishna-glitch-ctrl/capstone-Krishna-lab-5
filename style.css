@@ -1,0 +1,136 @@
+/* style.css
+   Student-friendly, clean, responsive Real Estate UI
+   Uses CSS Grid + Flexbox, media queries, variables, hover effects and animation.
+*/
+
+/* ========== VARIABLES ========== */
+:root{
+    --bg: #f7f8fb;
+    --card: #ffffff;
+    --muted: #6b7280;
+    --accent: #0b6cff;
+    --accent-2: #0ea5a4;
+    --surface: #eef2ff;
+    --radius: 12px;
+    --gap: 1.2rem;
+    --max-width: 1200px;
+    --container-pad: 1rem;
+    --shadow: 0 6px 18px rgba(11,108,255,0.08);
+    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    --font-head: "Montserrat", var(--font-sans);
+    font-size: 16px;
+  }
+  
+  * { box-sizing: border-box; }
+  html,body { height:100%; margin:0; font-family:var(--font-sans); background:var(--bg); color:#1f2937; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+  .container { max-width:var(--max-width); margin:0 auto; padding:0 var(--container-pad); }
+  
+  /* Skip link */
+  .skip-link { position: absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
+  .skip-link:focus { left:1rem; top:1rem; width:auto; height:auto; background:#fff; padding:.5rem .75rem; border-radius:6px; }
+  
+  /* ========== HEADER ========== */
+  .site-header { background:linear-gradient(90deg, rgba(11,108,255,0.06), rgba(14,165,164,0.02)); border-bottom:1px solid rgba(0,0,0,0.03); }
+  .header-inner { display:flex; align-items:center; gap:1rem; padding:1rem 0; justify-content:space-between; }
+  .brand { display:flex; align-items:center; gap:.65rem; }
+  .logo { width:44px; height:44px; border-radius:8px; object-fit:cover; }
+  .brand-name { font-family:var(--font-head); font-weight:600; letter-spacing:.2px; font-size:1.1rem; }
+  .main-nav ul { list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
+  .main-nav a { text-decoration:none; color:var(--muted); font-weight:500; padding:.35rem .6rem; border-radius:8px; }
+  .main-nav a:hover, .main-nav a:focus { color:var(--accent); background:transparent; outline:2px solid rgba(11,108,255,0.08); }
+  
+  /* Buttons */
+  .btn { display:inline-block; text-decoration:none; font-weight:600; padding:.5rem .7rem; border-radius:8px; cursor:pointer; border:0; background:transparent; }
+  .btn.primary { background:var(--accent); color:white; box-shadow:var(--shadow); }
+  .btn.ghost { background:transparent; border:1px solid rgba(0,0,0,0.06); }
+  .btn.link { color:var(--accent); background:transparent; padding:0; font-weight:600; }
+  .btn.secondary { background:var(--surface); color:var(--accent-2); }
+  
+  /* ========== HERO ========== */
+  .hero { padding:2.25rem 0; }
+  .hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; align-items:center; }
+  .hero-text h1 { font-family:var(--font-head); font-size:2rem; margin:0 0 .5rem; }
+  .lead { margin:0 0 1rem; color:var(--muted); font-size:1rem; }
+  .hero-image img { width:100%; border-radius:14px; box-shadow:var(--shadow); }
+  
+  /* simple hero animation */
+  @keyframes heroSlide {
+    from { transform: translateY(8px); opacity:0; }
+    to { transform: translateY(0); opacity:1; }
+  }
+  .hero-image, .hero-text { animation: heroSlide 700ms ease both; }
+  
+  /* ========== LISTINGS + FILTERS ========== */
+  .listings { display:grid; grid-template-columns: 280px 1fr; gap:1.25rem; align-items:start; padding:1.5rem 0; }
+  /* Filters */
+  .filters { background:var(--card); border-radius:var(--radius); padding:1rem; box-shadow:var(--shadow); }
+  .filters h2 { margin-top:0; font-size:1.05rem; font-weight:700; font-family:var(--font-head); }
+  .filters label { display:block; margin-bottom:.6rem; color:var(--muted); font-size:.95rem; }
+  .filters select, .filters input[type="text"] { width:100%; padding:.45rem .5rem; border-radius:8px; border:1px solid #e6e9ef; }
+  
+  /* Grid area */
+  .grid-and-sort { background:transparent; }
+  .listings-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:.75rem; }
+  .property-grid { list-style:none; display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; padding:0; margin:0; }
+  
+  /* Card */
+  .property-card { background:var(--card); border-radius:14px; overflow:hidden; display:flex; flex-direction:column; box-shadow:var(--shadow); transition: transform .18s ease, box-shadow .18s ease; }
+  .property-card:hover { transform: translateY(-6px); box-shadow:0 12px 28px rgba(11,108,255,0.08); }
+  .card-media { position:relative; margin:0; }
+  .card-media img { width:100%; height:170px; object-fit:cover; display:block; }
+  .price { position:absolute; left:0; bottom:0; background:linear-gradient(90deg, rgba(0,0,0,0.45), rgba(0,0,0,0.2)); color:white; padding:.45rem .6rem; border-top-right-radius:12px; font-weight:700; }
+  
+  /* Body */
+  .card-body { padding:1rem; display:flex; flex-direction:column; gap:.5rem; }
+  .card-title { margin:0; font-size:1.05rem; }
+  .card-sub { margin:0; color:var(--muted); font-size:.9rem; }
+  .card-meta { display:flex; justify-content:space-between; color:var(--muted); font-size:.85rem; margin-top:.4rem; }
+  .card-actions { margin-top:.6rem; display:flex; gap:.6rem; }
+  
+  /* Agents */
+  .agents { padding:1.25rem 0; }
+  .agent-list { display:flex; gap:1rem; }
+  .agent-card { display:flex; gap:.8rem; background:var(--card); padding:.75rem; border-radius:12px; align-items:center; box-shadow:var(--shadow); }
+  .agent-card img { width:64px; height:64px; border-radius:10px; object-fit:cover; }
+  
+  /* Contact form */
+  .contact { padding:2rem 0; }
+  .contact-inner { display:grid; grid-template-columns:1fr 420px; gap:1.2rem; align-items:start; }
+  .contact-info h2 { margin:0 0 .5rem; font-family:var(--font-head); }
+  .contact-form { background:var(--card); padding:1rem; border-radius:12px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:.6rem; }
+  .contact-form label { display:flex; flex-direction:column; font-size:.9rem; color:var(--muted); }
+  .contact-form input, .contact-form textarea { padding:.55rem .6rem; border-radius:8px; border:1px solid #e6e9ef; resize:vertical; }
+  
+  /* footer */
+  .site-footer { border-top:1px solid rgba(0,0,0,0.04); background:white; padding:.9rem 0; margin-top:1.5rem; }
+  .footer-inner { display:flex; justify-content:space-between; align-items:center; }
+  
+  /* small screens */
+  @media (max-width: 1023px) {
+    :root { --max-width:1000px; }
+    .property-grid { grid-template-columns:repeat(2,1fr); }
+    .listings { grid-template-columns: 240px 1fr; }
+    .hero-grid { grid-template-columns:1fr; }
+    .hero-image { order: -1; }
+    .contact-inner { grid-template-columns:1fr; }
+  }
+  
+  /* mobile */
+  @media (max-width: 600px) {
+    html { font-size:15px; }
+    .main-nav { display:none; } /* simple responsive behavior for student project */
+    .header-inner { gap:.5rem; }
+    .property-grid { grid-template-columns:1fr; }
+    .listings { grid-template-columns: 1fr; }
+    .filters { order: -1; margin-bottom:1rem; }
+    .hero-text h1 { font-size:1.6rem; }
+    .agent-list { flex-direction:column; }
+  }
+  
+  /* Accessibility focus state for keyboard users */
+  a:focus, button:focus, input:focus, select:focus, textarea:focus { outline: 3px solid rgba(11,108,255,0.12); outline-offset: 2px; border-color: rgba(11,108,255,0.18); }
+  
+  /* small niceties */
+  legend { font-weight:700; font-size:.95rem; margin-top:.6rem; }
+  small { color:var(--muted); }
+  
