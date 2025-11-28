@@ -5,7 +5,7 @@
 
 Overview
 This project is a responsive real-estate listing UI built using **HTML5** and **CSS3**.  
-The page includes a hero section, property listings grid, filter sidebar (visual only), agents section, and a contact form.
+The page includes a hero section, property listings grid, filter sidebar , agents section, and a contact form.
 
  What’s Included
 - `index.html` – main structure (semantic HTML)
