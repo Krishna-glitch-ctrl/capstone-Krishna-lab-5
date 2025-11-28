@@ -19,8 +19,9 @@ The page includes a hero section, property listings grid, filter sidebar , agent
 - CSS variables, hover effects & small hero animation  
 - Accessible: alt text, skip link, focus styles
 
- How to Run
-Open **index.html** in any browser  
+How to Run
+ 
+-Open **index.html** in any browser  
 (or use VS Code Live Server).
 
 
